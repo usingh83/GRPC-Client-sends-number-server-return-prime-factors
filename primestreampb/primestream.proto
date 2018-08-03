@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package primestream;
+option go_package="primestreampb";
+
+message NumberRequest{
+    int64 request=1;
+}
+
+message NumbermanyResponse{
+    int64 response=1;
+}
+
+service NumberService{
+    rpc Primestream(NumberRequest) returns (stream NumbermanyResponse);
+}
